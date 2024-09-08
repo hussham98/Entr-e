@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Prevents scrollbars from appearing */
+  }
+  
+  .background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-image: url("images/images.jpeg");*/
+    background: linear-gradient(270deg, white, white);
+    animation: gradient-animation 15s ease infinite;
+    z-index: -1; /*Set behind other elements*/ 
+    
+    
+  }
+  
+  @keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .main-container {
+    display: flex;
+    width: 100vw; /* Fill the whole viewport width */
+    height: 100vh; /* Fill the whole viewport height */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 0; /* Remove border radius to fill the screen */
+    overflow: hidden;
+   
+    
+  }
+  /*.main-container.active{
+    display: block;
+  }
+  .background-animation.shrink{
+    width : 50%;
+  }*/
+  
+  .login-section {
+    flex:1;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease; /* Transition for the login section */
+  }
+  .login-section.hidden{
+    opacity:0;
+  }
+  
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    
+  }
+  
+  .logo {
+    width: 60px; /* Adjust logo size */
+    height: 60px; /* Adjust logo size */
+    margin: 0px;
+    padding: 0; 
+    
+  }
+  
+  h1 {
+    color: #006400;
+    margin: 0;
+    padding: 0px;
+    
+  }
+  
+  .welcome {
+    
+    margin: 100px 50px;
+    align-self: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  label {
+    margin-top: 0;
+    font-size: 15px;
+    align-self: right;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    align-self: center;
+    width:400px;
+    /*position: relative;
+    /*z-index: 2;/* Transition for input fields */
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #007bff;
+     /* Focus shadow effect */
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+  }
+  
+  .remember-section {
+    width: 350px;
+    clear: both;
+  }
+  
+  #login-btn {
+    padding: 10px;
+    background-color: #006300;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    width: 400px;
+    align-self: center;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for button */
+  }
+  
+  #login-btn:hover {
+    background-color: #004d00;
+    transform: scale(1.05); /* Scale effect on hover */
+  }
+  .forgot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .forgot-link {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .with-dot::before {
+    content: "•";
+    color: grey;
+    margin-right: 10px;
+  }
+  
+  .forgot-link:hover {
+    color: #0056b3;
+  }
+  
+  .enroll-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    position: absolute;
+    top: 13px;
+    left: 43%;
+    font-size: 13px;
+    transform: translate(-50%);
+  }
+  
+  .enroll-btn {
+    margin-left: 5px;
+    margin-top: -15px;
+    font-size: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    line-height: 1;/* Transition for enroll button */
+  }
+  
+  .enroll-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    position: absolute;
+    bottom: 5px;
+    left: 25%;
+    transform: translateX(-50%);
+  }
+  
+  .material-symbols-outlined {
+    margin-right: 4px;
+    font-size: 16px;
+    vertical-align: middle;
+  }
+
+  .image-section {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;/* Transition for image section */
+  }
+
+  .image-section img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+  
+  /* Loading Animation */
+  .loading {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #006400;
+  }
+  
+  .loading::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #006400;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+  }
+
+   .fullscreen-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 1s ease; /* Smooth transition */
+    display: none; /* Initially hidden */
+  }
+
+  /* .centered-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    
+    /* Ensure it appears above other elements 
+  }
+   .centered-logo-size {
+    width: 60px; /* Adjust logo size 
+    height: 60px; /* Adjust logo size 
+    margin: 0px;
+    padding: 0;
+   }*/
+   .centered-logo {
+    position: fixed;
+    top: 10px; /* Initial position (top left) */
+    left: 10px; /* Initial position (top left) */
+    
+    opacity: 0; /* Initially hidden */
+    z-index: 10;
+    transition: all 2s ease; /* Animate all properties over 2 seconds */
+   animation: myfirst 1s 2;
+  animation-direction: normal;
+}
+
+@keyframes myfirst {
+    0% {
+      left: 10px; 
+      top: 10px; /* Start at the top left */
+    }
+    
+    10% {
+      left: 100px; 
+      top: 50px; /* Move towards center */
+    }
+    
+    20% {
+      left: 200px; 
+      top: 100px; /* Continue moving towards center */
+    }
+    
+    30% {
+      left: 300px; 
+      top: 150px; /* Approaching center */
+    }
+    
+    40% {
+      left: 400px; 
+      top: 200px; /* Nearing center */
+    }
+    
+    50% {
+      left: 50%; 
+      top: 50%; /* Center of the screen */
+      transform: translate(-50%, -50%); /* Center the element */
+    }
+    
+    100% {
+      left: 50%; 
+      top: 50%; /* Stay at the center */
+      transform: translate(-50%, -50%); /* Center the element */
+    }
+  }
+  
+  
+  .centered-logo.active {
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    opacity: 1; /* Fade in */
+    width: 150px; /* Optionally change size when centered */
+  }
+
+   .white-background {
+    background-color: white;
+    transition: background-color 1s ease;
+  }
+
+   
+   @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+    .shrink {
+    animation: shrinkAnimation 1s ease forwards;
+  }
+
+   @keyframes shrinkAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+  }
+
+/* Loader for the spinning button */
+    .loader {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid grey; /* Grey */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite; /* Only for loader */
+    display: inline-block;
+  }
+  .image-section.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Expand to fill the entire screen */
+    height: 100vh;
+    
+    animation: expandAnimation 1s ease forwards;
+  }
+  @keyframes expandAnimation {
+    0% {
+      transform: scale(0); /* Start from zero size */
+    }
+    100% {
+      transform: scale(1); /* End at full size */
+    }
+  }
